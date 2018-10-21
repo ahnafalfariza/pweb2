@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cashier App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Filosofi Kopi</h1>
+    </div>
+    <div class="main">
+        <form name="form">
+            <div class="item">
+                Item<br>
+                <select id="menu" onchange="costperitem()">
+                    <option value="espresso">Espresso</option>
+                    <option value="cappuccino">Cappuccino</option>
+                    <option value="americano">Americano</option>
+                    <option value="latte">Latte</option>
+                </select><br>
+            </div>
+            
+            <div class="item">
+                Quantity<br>
+                <input id="quantity" type="number" min="1" max="100" onkeyup="addquantity()"><br>
+            </div>
+            
+            <div class="item">
+                Cost (per item)<br>
+                <input id="cost" type="text" value="30000" readonly="readonly"><br>
+            </div>
+            
+            <div>
+                <div class="item">
+                    Total<br>
+                    <input id="total" type="text" readonly="readonly"><br>
+                </div>
+                <div class="item">
+                    Discount (%)<br>
+                    <input id="dsc" type="number" min="0" max="100" onkeyup="discount()"><br>
+                </div>
+            </div>
+            
+            <div>
+                <div class="item">
+                    Money Received<br>
+                    <input id="money" type="number" min="0" onkeyup="transaction()"><br>
+                </div>
+                <div class="item">
+                    Change<br>
+                    <input id="change" type="text" readonly="readonly"><br>
+                </div>
+            </div>
+            
+        </form>
+    </div>    
+    <button onclick="reset()">Reset</button>
+</body>
+</html>
